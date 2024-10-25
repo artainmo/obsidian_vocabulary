@@ -32,8 +32,8 @@ jobs:
 
       # Step 4: Create the mail via a makefile command
       - name: Create the mail
-        env:
-          OPENAI_API_KEY = ${{ secrets.OPENAI_API_KEY }}
+        env: 
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: make build_mail
 
       # Step 5: Send the email.
