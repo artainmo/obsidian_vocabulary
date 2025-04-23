@@ -26,7 +26,7 @@ def word_mail(voc):
 
 def expression_mail(voc):
     content = "This mail stems from the [obsidian_vocabulary](https://github.com/artainmo/obsidian_vocabulary) project.\n\n"
-    content += f"The expression of the day is '[{voc}](https://www.google.com/search?q={voc.replace(' ', '+')}+definition+and+translation+fench+english)'.\n\n"
+    content += f"The expression of the day is '[{voc}](https://www.google.com/search?q={voc.replace(' ', '+')}+definition+and+translation+french+english)'.\n\n"
     return content
 
 
