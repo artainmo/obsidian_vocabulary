@@ -12,17 +12,17 @@ jobs:
     steps:
       # Step 1: Download the GitHub repository’s source code to the runner (the virtual machine where the action is being executed). Without this step, the subsequent steps wouldn't have access to the repository's code.
       - name: Checkout the repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true  # This will initialize and update submodules.
           fetch-depth: 0 # Ensures that all commit history is fetched. Sometimes, a shallow clone can cause issues with submodules, so this ensures that full commit history is available for both the main repository and submodules.
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # Use personal access token, to enable private repository access, created in 'developer settings' and referenced in 'secrets and variables' of this repository.
 
-      # Step 2: Set up Python 3.9 for scripts.
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v4
+      # Step 2: Set up Python for scripts.
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.12'
 
       # Step 3: Install openai to query chatGPT for definitions and translations
       - name: Install openai
